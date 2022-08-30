@@ -1,6 +1,6 @@
 using namespace std;
 #define int long long
-const int mod = 1e6;
+const int mod = 1e9 + 7;
 const int m = 2; // size of matrix
  
 struct Matrix { 
