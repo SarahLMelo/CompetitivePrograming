@@ -1,3 +1,5 @@
+//Complexity O(n*m), avg = O(m)
+
 bool spfa(int s) {
     int n = g.size();
     vector<int> cnt(n, 0);
