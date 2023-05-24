@@ -1,17 +1,20 @@
-int bit[ms], n;
+vector <int> tree;
 
-void update(int idx, int v) {
-  while(idx <= n) {
-    bit[idx] += v;
-    idx += idx & -idx;
-  }
+void update(int pos, int val){
+    // tree[pos] += val
+
+    for(int x = pos; x < tree.size(); x += x & -x){
+        tree[x] += val;
+    }
 }
 
-int query(int idx) {
-  int ans = 0;
-  while(idx > 0) {
-    ans += bit[idx];
-    idx -= idx & -idx;
-  }
-  return ans;
+int query(int pos){
+    // soma de tree[i <= pos]
+
+    int ans = 0;
+    for(int x = pos; x > 0; x -= x & -x){
+        ans += tree[x];
+    }
+
+    return ans;
 }
